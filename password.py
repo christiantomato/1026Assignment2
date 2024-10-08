@@ -1,3 +1,15 @@
+"""
+******************************
+CS 1026 - Assignment 2 – Password Strength
+Code by: Christian Tamayo
+Student ID: ctamayo
+File created: October 8, 2024
+******************************
+This file is used to calculate the strength of a given password.
+It determines this based on the amount of different character groups
+and the length of the password.
+"""
+
 #the symbols group
 symbols_arr = ['!','@','#','$','%','^','&','*','/','?','-','+','+',',','.','|','~']
 
@@ -24,7 +36,7 @@ def count_groups(pwd):
     #count truth values (true = 1, false = 0)
     return int(lower) + int(upper) + int(number) + int(symbols)
 
-#check strength
+#password strength
 def password_strength(pwd):
     #strength value
     strength = 0
@@ -47,7 +59,7 @@ def password_strength(pwd):
     #check groups
     groups = count_groups(pwd)
 
-    #group score is irrelevant if length is too short
+    #groups is irrelevant if length is too short
     if groups > 3 and length > 4:
         strength += 2
     elif groups > 1 and length > 4:
